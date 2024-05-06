@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rancho&family=Water+Brush&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.skills_section {
+  width: 100%;
+  padding: 0px 13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.skills_head {
+  width: 100%;
+  margin-bottom: 50px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.skills_head h2 {
+  font-size: 30px;
+  margin-bottom: -5px;
+}
+
+.skills_head h2 span {
+  color: rgb(129 140 248);
+}
+
+.skills_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 50px;
+}
+
+.skills_main .skill_bar .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.skill_bar .info p:nth-child(2) {
+  font-weight: 500;
+}
+
+.skill_bar .bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.144);
+  border-radius: 25px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.skill_bar .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(129 140 248);
+  border-radius: 25px;
+}
+
+.skill_bar .bar .html {
+  width: 100%;
+  animation: html 2s;
+}
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.skill_bar .bar .css {
+  width: 90%;
+  animation: css 2s;
+}
+
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.skill_bar .bar .tailwind {
+  width: 92%;
+  animation: tailwind 2s;
+}
+
+@keyframes tailwind {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.skill_bar .bar .js {
+  width: 96%;
+  animation: js 2s;
+}
+
+@keyframes js {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.skill_bar .bar .react {
+  width: 98%;
+  animation: react 2s;
+}
+
+@keyframes react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+.skill_bar .bar .node {
+  width: 89%;
+  animation: node 2s;
+}
+
+@keyframes node {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+.skill_bar .bar .express {
+  width: 86%;
+  animation: express 2s;
+}
+
+@keyframes express {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 86%;
+  }
+}
+
+.skill_bar .bar .mongo {
+  width: 95%;
+  animation: mongo 2s;
+}
+
+@keyframes mongo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+.skill_bar .bar .typescript {
+  width: 70%;
+  animation: typescript 2s;
+}
+
+@keyframes typescript {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+.skill_bar .bar .mongoose {
+  width: 90%;
+  animation: mongoose 2s;
+}
+
+@keyframes mongoose {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.skill_bar .bar .redux {
+  width: 90%;
+  animation: redux 2s;
+}
+
+@keyframes redux {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.skill_bar .bar .next {
+  width: 93%;
+  animation: next 2s;
+}
+
+@keyframes next {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 93%;
+  }
+}
+
+.skill_bar .bar .framer-motion {
+  width: 95%;
+  animation: framer-motion 2s;
+}
+
+@keyframes framer-motion {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+.skill_bar .bar .tanstack-query {
+  width: 70%;
+  animation: tanstack-query 2s;
+}
+
+@keyframes tanstack-query {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+.skill_bar .bar .authentication {
+  width: 90%;
+  animation: authentication 2s;
+}
+
+@keyframes authentication {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.skill_bar .bar .github {
+  width: 100%;
+  animation: github 2s;
+}
+
+@keyframes github {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.skill_bar .bar .bootstrap {
+  width: 100%;
+  animation: bootstrap 2s;
+}
+
+@keyframes bootstrap {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.skill_bar .bar .shandcn {
+  width: 100%;
+  animation: shandcn 2s;
+}
+
+@keyframes bootstrap {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+

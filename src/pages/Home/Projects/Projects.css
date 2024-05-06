@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#holder{
+    overflow-x:hidden;
+    min-height: 100vh;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.title{
+    font-size: 30px;
+}
+.scroll-item{
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+.scroll-item:nth-child(1){
+    background: url(https://i.ibb.co/Cw02gG3/Screenshot-2023-06-28-at-23-46-38-Infinite-Power.png);
+    background-size: cover;
+    background-position: top;
+    transition: all 1s ease;
+}
+.scroll-item:nth-child(2){
+    background: url(https://i.ibb.co/YPp30fL/Screenshot-2023-06-28-at-23-46-06-Toy-Stars-Home.png);
+    background-size: cover;
+    background-position: top;
+    transition: all 1s ease;
+}
+.scroll-item:nth-child(3){
+    background: url(https://i.ibb.co/6YXDRqq/screencapture-car-news-vercel-app-2023-10-25-23-00-16.png);
+    background-size: cover;
+    background-position: top;
+    transition: all 1s ease;
+}
+.scroll-item img{
+    width: 100%;
+    display: block;
+}
+.scroll-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+.bot-button{
+    position: absolute;
+    bottom: -100%;
+    background-color: rgb(177, 178, 253);
+    width: 100%;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.3s ease;
+}
+.bot-button button{
+    margin: 0 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.scroll-item:hover .bot-button{
+    bottom: 0;
+}
+.scroll-item:hover{
+    background-position: bottom;
+}
+
+@media screen and (max-width: 992px){
+    .scroll-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px){
+    .scroll-list{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
