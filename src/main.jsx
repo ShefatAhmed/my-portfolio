@@ -8,6 +8,7 @@ import About from "./pages/Home/About/About";
 import Contact from "./pages/Contact/Contact";
 import Blog from "./pages/Blog/Blog";
 import AllProject from "./pages/AllProject/AllProject";
+import Dashboard from "./Layout/Dashboard";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,16 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <div>THis is dashboard</div>,
       },
     ],
   },
