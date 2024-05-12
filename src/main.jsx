@@ -9,6 +9,9 @@ import Contact from "./pages/Contact/Contact";
 import Blog from "./pages/Blog/Blog";
 import AllProject from "./pages/AllProject/AllProject";
 import Dashboard from "./Layout/Dashboard";
+import Blogs from "./pages/Dashboard/Blogs/Blogs";
+import Projects from "./pages/Dashboard/Projects/Projects";
+import UpdateBlog from "./pages/Dashboard/Blogs/UpdateBlog/UpdateBlog";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +50,20 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <div>THis is dashboard</div>,
+      },
+      {
+        path: "/dashboard/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/dashboard/projects",
+        element: <Projects />,
+      },
+      {
+        path: "/dashboard/blog/:id",
+        element: <UpdateBlog />,
+        loader: ({ params }) =>
+          fetch(`https://portfolio-server-ten-delta.vercel.app/blog/${params.id}`),
       },
     ],
   },

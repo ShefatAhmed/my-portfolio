@@ -4,7 +4,7 @@ const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     fetch(
-      "https://l2-b2-frontend-path-assignment-6-server-starter-pack-zeta.vercel.app/api/v1/blogs"
+      "https://portfolio-server-ten-delta.vercel.app/blogs"
     )
       .then((res) => res.json())
       .then((data) => {

@@ -4,7 +4,7 @@ const AllProject = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-      fetch("https://l2-b2-frontend-path-assignment-6-server-starter-pack-zeta.vercel.app/api/v1/project")
+      fetch("https://portfolio-server-ten-delta.vercel.app/projects")
         .then((res) => res.json())
         .then((data) => {
           setProjects(data);

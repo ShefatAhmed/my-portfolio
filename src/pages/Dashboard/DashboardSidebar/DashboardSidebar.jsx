@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
       </nav>
       <div className="bottom-0">
         <NavLink to="/" className="flex justify-center items-center gap-2">
-          <i class="fa-solid fa-house"></i> Home
+          <i className="fa-solid fa-house"></i> Home
         </NavLink>
       </div>
     </div>
