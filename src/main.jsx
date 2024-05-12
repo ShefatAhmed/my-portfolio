@@ -12,6 +12,9 @@ import Dashboard from "./Layout/Dashboard";
 import Blogs from "./pages/Dashboard/Blogs/Blogs";
 import Projects from "./pages/Dashboard/Projects/Projects";
 import UpdateBlog from "./pages/Dashboard/Blogs/UpdateBlog/UpdateBlog";
+import AuthProvider from "./providers/AuthProvider";
+import PrivateRoutes from "./pages/Dashboard/PrivateRoutes/PrivateRoutes";
+import Login from "./Login/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,8 +47,16 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "login",
+    element: <Login />,
+  },
+  {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoutes>
+        <Dashboard />
+      </PrivateRoutes>
+    ),
     children: [
       {
         path: "/dashboard",
@@ -63,7 +74,9 @@ const router = createBrowserRouter([
         path: "/dashboard/blog/:id",
         element: <UpdateBlog />,
         loader: ({ params }) =>
-          fetch(`https://portfolio-server-ten-delta.vercel.app/blog/${params.id}`),
+          fetch(
+            `https://portfolio-server-ten-delta.vercel.app/blog/${params.id}`
+          ),
       },
     ],
   },
@@ -74,6 +87,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

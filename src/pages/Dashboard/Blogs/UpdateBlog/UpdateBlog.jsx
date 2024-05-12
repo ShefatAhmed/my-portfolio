@@ -48,7 +48,7 @@ const UpdateBlog = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="w-full md:max-w-2xl py-5 px-8">
+      <div className="w-full md:max-w-2xl py-5 px-8 shadow-md rounded-lg">
         <form
           onSubmit={handleSubmit}
           className="max-w-full md:max-w-2xl p-5 mx-auto"
