@@ -17,6 +17,7 @@ import PrivateRoutes from "./pages/Dashboard/PrivateRoutes/PrivateRoutes";
 import Login from "./Login/Login";
 import UpdateProject from "./pages/Dashboard/Projects/UpdateProject/UpdateProject";
 import SetSkills from "./pages/Dashboard/SetSkills/SetSkills";
+import DashboardHome from "./pages/Dashboard/DashboardHome";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <div>THis is dashboard</div>,
+        element: <DashboardHome />,
       },
       {
         path: "/dashboard/blogs",
