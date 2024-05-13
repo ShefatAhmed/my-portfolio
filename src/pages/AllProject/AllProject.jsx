@@ -1,53 +1,59 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllProject = () => {
-    const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
-      fetch("https://portfolio-server-ten-delta.vercel.app/projects")
-        .then((res) => res.json())
-        .then((data) => {
-          setProjects(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching projects:", error);
-        });
-    }, []);
+  useEffect(() => {
+    fetch("https://portfolio-server-ten-delta.vercel.app/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching projects:", error);
+      });
+  }, []);
+
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <h1 className="uppercase text-center font-extrabold text-2xl mt-5">
         Here are shown All Projects
       </h1>
-      <div className="flex flex-wrap justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-3">
         {projects.map((project) => (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
-            <img className="w-full" src={project.image} alt={project.title} />
+          <div
+            key={project._id}
+            className="max-w-sm rounded overflow-hidden shadow-lg"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 object-cover"
+            />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{project.title}</div>
-              <p className="text-gray-700 text-base">{project.description}</p>
+              <p className="text-gray-700 text-base">
+                {project.description.length > 60
+                  ? project.description.substring(0, 60) + "..."
+                  : project.description}
+                {project.description.length > 60 && (
+                  <Link
+                    to={`/project/${project._id}`}
+                    className="text-indigo-400"
+                  >
+                    View Details
+                  </Link>
+                )}
+              </p>
             </div>
-            <div className="px-6 py-4">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-                {project.technology}
-              </span>
-            </div>
-            <div className="px-6 py-4">
-              <a
-                href={project.gitLink}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href={project.liveLink}
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Live Demo
-              </a>
+            <div className="flex px-6 py-4 gap-5 items-center">
+              <button className="text-3xl">
+                <i className="fa-brands fa-github"></i>
+              </button>
+              <button className="glass hover:bg-indigo-800 px-5 py-1 rounded hover:text-white">
+                Live Website
+              </button>
             </div>
           </div>
         ))}
