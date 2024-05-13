@@ -19,6 +19,7 @@ import UpdateProject from "./pages/Dashboard/Projects/UpdateProject/UpdateProjec
 import SetSkills from "./pages/Dashboard/SetSkills/SetSkills";
 import DashboardHome from "./pages/Dashboard/DashboardHome";
 import ViewProject from "./pages/ViewProject/ViewProject";
+import ViewBlog from "./pages/ViewBlog/ViewBlog";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +55,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(
             `https://portfolio-server-ten-delta.vercel.app/project/${params.id}`
+          ),
+      },
+      {
+        path: "blog/:id",
+        element: <ViewBlog />,
+        loader: ({ params }) =>
+          fetch(
+            `https://portfolio-server-ten-delta.vercel.app/blog/${params.id}`
           ),
       },
     ],

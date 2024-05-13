@@ -29,7 +29,7 @@ const ViewProject = () => {
           src={projectData.image}
           alt={projectData.title}
         />
-        <div className="p-6">
+        <div className="p-6 border">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
             {projectData.title}
           </h2>
