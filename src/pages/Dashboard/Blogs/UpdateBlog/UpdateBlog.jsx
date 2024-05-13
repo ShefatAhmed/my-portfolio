@@ -40,6 +40,7 @@ const UpdateBlog = () => {
       .then((data) => {
         if (data.modifiedCount) {
           alert("Blog update sucessfully!")
+          setBlogData(updateBlog);
         }
       });
 

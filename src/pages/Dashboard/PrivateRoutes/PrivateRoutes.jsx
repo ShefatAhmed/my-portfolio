@@ -8,8 +8,8 @@ const PrivateRoutes = ({ children }) => {
   const location = useLocation();
   if (loading) {
     return (
-      <div class="flex justify-center items-center h-screen">
-        <div class="animate-spin rounded-full h-24 w-24 border-t-8 border-b-8 border-gray-200"></div>
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-24 w-24 border-t-8 border-b-8 border-gray-200"></div>
       </div>
     );
   }

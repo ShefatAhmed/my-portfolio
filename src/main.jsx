@@ -15,6 +15,7 @@ import UpdateBlog from "./pages/Dashboard/Blogs/UpdateBlog/UpdateBlog";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoutes from "./pages/Dashboard/PrivateRoutes/PrivateRoutes";
 import Login from "./Login/Login";
+import UpdateProject from "./pages/Dashboard/Projects/UpdateProject/UpdateProject";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -76,6 +77,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(
             `https://portfolio-server-ten-delta.vercel.app/blog/${params.id}`
+          ),
+      },
+      {
+        path: "/dashboard/project/:id",
+        element: <UpdateProject />,
+        loader: ({ params }) =>
+          fetch(
+            `https://portfolio-server-ten-delta.vercel.app/project/${params.id}`
           ),
       },
     ],

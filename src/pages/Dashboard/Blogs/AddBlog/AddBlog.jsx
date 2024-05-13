@@ -42,47 +42,47 @@ const AddBlog = () => {
     }
   };
   return (
-    <div class="pb-10 sm:pb-20 md:pb-40 lg:pb-60 px-4 sm:px-6 lg:px-8">
+    <div className="pb-10 sm:pb-20 md:pb-40 lg:pb-60 px-4 sm:px-6 lg:px-8">
       <form
         onSubmit={handleSubmit}
-        class="max-w-2xl mx-auto bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
+        className="max-w-2xl mx-auto bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
       >
-        <h1 class="text-center font-bold text-3xl my-8">Add A Blog</h1>
-        <div class="mb-4">
-          <label class="block text-xs font-bold text-gray-700" for="img">
+        <h1 className="text-center font-bold text-3xl my-8">Add A Blog</h1>
+        <div className="mb-4">
+          <label className="block text-xs font-bold text-gray-700" for="img">
             Blog Image URL
           </label>
           <input
             type="text"
             id="img"
             name="img"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter Image URL"
             required
           />
         </div>
-        <div class="mb-4">
-          <label class="block text-xs font-bold text-gray-700" for="title">
+        <div className="mb-4">
+          <label className="block text-xs font-bold text-gray-700" for="title">
             Blog Title
           </label>
           <input
             type="text"
             id="title"
             name="title"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter Title"
             required
           />
         </div>
-        <div class="mb-6">
+        <div className="mb-6">
           <label
-            class="block text-xs font-bold text-gray-700"
+            className="block text-xs font-bold text-gray-700"
             for="description"
           >
             Blog Description
           </label>
           <textarea
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             id="description"
             name="description"
             rows="4"
@@ -90,10 +90,10 @@ const AddBlog = () => {
             required
           ></textarea>
         </div>
-        <div class="flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <button
             type="submit"
-            class="w-full py-3 btn glass bg-indigo-600 rounded-full text-white px-10 hover:bg-indigo-800"
+            className="w-full py-3 btn glass bg-indigo-600 rounded-full text-white px-10 hover:bg-indigo-800"
           >
             Submit
           </button>
