@@ -9,7 +9,7 @@ const AllProject = () => {
       .then((data) => {
         addProjects(data);
       });
-  }, []);
+  }, [projects]);
 
   const handleDelete = (id) => {
     fetch(`https://portfolio-server-ten-delta.vercel.app/project/${id}`, {

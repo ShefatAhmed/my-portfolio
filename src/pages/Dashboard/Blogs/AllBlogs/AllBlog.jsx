@@ -10,7 +10,7 @@ const AllBlog = () => {
       .then((data) => {
         addblogs(data);
       });
-  }, []);
+  }, [blogs]);
 
   const handleDelete = (id) => {
     fetch(`https://portfolio-server-ten-delta.vercel.app/blog/${id}`, {

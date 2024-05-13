@@ -21,6 +21,9 @@ const DashboardSidebar = () => {
         <NavLink to="/dashboard/projects">
           <span className="truncate lg:px-8">Projects</span>
         </NavLink>
+        <NavLink to="/dashboard/set-skills">
+          <span className="truncate lg:px-8">Skills</span>
+        </NavLink>
       </nav>
       <div className="bottom-0">
         <Link

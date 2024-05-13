@@ -16,6 +16,7 @@ import AuthProvider from "./providers/AuthProvider";
 import PrivateRoutes from "./pages/Dashboard/PrivateRoutes/PrivateRoutes";
 import Login from "./Login/Login";
 import UpdateProject from "./pages/Dashboard/Projects/UpdateProject/UpdateProject";
+import SetSkills from "./pages/Dashboard/SetSkills/SetSkills";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/projects",
         element: <Projects />,
+      },
+      {
+        path: "/dashboard/set-skills",
+        element: <SetSkills />,
       },
       {
         path: "/dashboard/blog/:id",
