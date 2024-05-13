@@ -1,164 +1,58 @@
-import React from "react";
-import "./Skills.css";
+import React, { useEffect, useState } from "react";
 const Skills = () => {
+  const [skills, addSkills] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://portfolio-server-ten-delta.vercel.app/skills`)
+      .then((res) => res.json())
+      .then((data) => {
+        addSkills(data);
+      });
+  }, [skills]);
   return (
-    <div className="skills_section mt-8">
-      <div className="skills_head">
-        <h2>
-          My <span className="text-red-500">Skills</span>
-        </h2>
-        <p>Here are my skills to represent my expertise</p>
-      </div>
-      <div className="skills_main gap-y-6 gap-x-10">
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>HTML</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="html h-full bg-red-500 rounded-md animate-html"></span>
-          </div>
+    <div className="py-12 px-4 sm:px-6 lg:px-8 mx-5">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center">
+          <h1 className="title text-center">
+            <span className="text-indigo-400">My</span> Skills
+          </h1>
+          <p className="text-lg text-gray-600">
+            Here are my skills to represent my level
+          </p>
         </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>CSS</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="css h-full bg-red-500 rounded-md animate-css"></span>
-          </div>
+        <div className="mt-10 grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2">
+          {skills.map((skill, index) => (
+            <div key={index} className="group">
+              <div className="mt-2">
+                <p className="text-lg font-semibold text-gray-900">
+                  {skill.skill_name}
+                </p>
+                <div className="bg-gray-300 h-2 rounded-full">
+                  <div
+                    className={`bg-indigo-400 h-full rounded-full ${
+                      skill.level === "beginner"
+                        ? "w-1/4"
+                        : skill.level === "intermediate"
+                        ? "w-1/2"
+                        : skill.level === "advanced"
+                        ? "w-3/4"
+                        : skill.level === "super_advanced"
+                        ? "w-full"
+                        : "w-full"
+                    }
+                    `}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Tailwind</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="tailwind h-full bg-red-500 rounded-md animate-tailwind"></span>
-          </div>
+        <div className="mt-5 text-center">
+          <p className="text-base text-gray-600">
+            <span className="font-bold ">Familiar with :</span> MaterialUI,
+            Postgresql, Stripe and SSLCOMMERZ payment gateway, Agora, Axios etc.
+          </p>
         </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Java Script</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="js h-full bg-red-500 rounded-md animate-js"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>React js</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="react h-full bg-red-500 rounded-md animate-react"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Node js</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="node h-full bg-red-500 rounded-md animate-node"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Express js</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="express h-full bg-red-500 rounded-md animate-express"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>MongoDB</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="mongo h-full bg-red-500 rounded-md animate-mongo"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>TypeScript</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="typescript h-full bg-red-500 rounded-md animate-mongo"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Mongoose</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="mongoose h-full bg-red-500 rounded-md animate-mongoose"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Redux</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="redux h-full bg-red-500 rounded-md animate-redux"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Next.js</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="next h-full bg-red-500 rounded-md animate-next"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Framer Motion</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="framer-motion h-full bg-red-500 rounded-md animate-framer-motion"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Tanstack Query</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="tanstack-query h-full bg-red-500 rounded-md animate-tanstack-query"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Authentication(firebase, nextauth)</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="authentication h-full bg-red-500 rounded-md animate-authentication"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Github</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="github h-full bg-red-500 rounded-md animate-github"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Bootstrap</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="bootstrap h-full bg-red-500 rounded-md animate-bootstrap"></span>
-          </div>
-        </div>
-        <div className="skill_bar">
-          <div className="info flex justify-between items-center px-2">
-            <p>Shadcn UI</p>
-          </div>
-          <div className="bar h-2 bg-gray-300 rounded-md mt-1">
-            <span className="shandcn h-full bg-red-500 rounded-md animate-shadcn"></span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <p className="mt-3 text-center">
-          <span className="font-bold ">Familiar with :</span> MaterialUI, Postgresql, Stripe and SSLCOMMERZ payment gateway, Agora, Axios etc.
-        </p>
       </div>
     </div>
   );
