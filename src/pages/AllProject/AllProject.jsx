@@ -48,12 +48,15 @@ const AllProject = () => {
               </p>
             </div>
             <div className="flex px-6 py-4 gap-5 items-center">
-              <button className="text-3xl">
+              <Link to={project.gitLink} className="text-3xl">
                 <i className="fa-brands fa-github"></i>
-              </button>
-              <button className="glass hover:bg-indigo-800 px-5 py-1 rounded hover:text-white">
+              </Link>
+              <Link
+                to={project.liveLink}
+                className="glass hover:bg-indigo-800 px-5 py-1 rounded hover:text-white"
+              >
                 Live Website
-              </button>
+              </Link>
             </div>
           </div>
         ))}

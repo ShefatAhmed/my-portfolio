@@ -115,7 +115,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>Error</div>,
+    element: <div>Error.......</div>,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
